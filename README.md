@@ -1,121 +1,248 @@
-Documentación — Calculadora en Python
-🧾 Descripción general
+🧾 1. Resumen
 
-Esta aplicación es una calculadora de consola desarrollada en Python que permite realizar operaciones matemáticas básicas y algunas avanzadas mediante un menú interactivo.
+La presente aplicación es una calculadora interactiva desarrollada en Python, diseñada para ejecutarse en entorno de consola. Permite realizar operaciones matemáticas básicas y algunas avanzadas mediante un sistema de menú sencillo e intuitivo.
 
-El usuario selecciona una opción, introduce los valores solicitados y obtiene el resultado inmediatamente.
+Este documento tiene un doble propósito:
 
-⚙️ Requisitos
+✔ Presentar el sistema de forma profesional a un cliente o evaluador
+✔ Servir como material de aprendizaje para comprender el porqué de cada componente del programa
 
-Tener Python instalado (Python 3 recomendado)
+🎯 2. Objetivo del Sistema
 
-Ejecutar el archivo desde la terminal o un entorno como VS Code, IDLE o PyCharm
+Desarrollar una herramienta ligera que permita realizar cálculos matemáticos de forma rápida, confiable y sin necesidad de interfaz gráfica, optimizando recursos y facilitando su uso en cualquier equipo con Python instalado.
 
-▶️ Ejecución del programa
+🖥️ 3. Alcance del Proyecto
 
-Abrir la terminal o consola
+La aplicación permite:
 
-Ubicarse en la carpeta donde está el archivo
+Realizar operaciones aritméticas básicas
 
-Ejecutar:
+Ejecutar cálculos matemáticos comunes
 
-python nombre_del_archivo.py
+Procesar múltiples números para promedios
 
-Al iniciar, aparecerá el título:
+Validar errores frecuentes del usuario
 
-=== CALCULADORA EN PYTHON ===
-🧮 Menú de opciones
+Mantener ejecución continua hasta que se indique salida
 
-El programa muestra continuamente un menú hasta que el usuario decida salir.
+No incluye:
 
---- MENÚ ---
-1. Suma
-2. Resta
-3. Multiplicación
-4. División
-5. Raíz cuadrada
-6. Potencia
-7. Porcentaje
-8. Módulo
-9. Promedio
-0. Salir
-📊 Operaciones disponibles
-➕ 1. Suma
+Interfaz gráfica
 
-Suma dos números enteros.
+Almacenamiento de resultados
 
-Entrada:
+Soporte para números decimales (solo enteros)
 
-Primer número
+Funciones científicas avanzadas
 
-Segundo número
+⚙️ 4. Requisitos del Sistema
+Software
 
-Resultado:
-La suma de ambos valores.
+Python 3.x
 
-➖ 2. Resta
+Consola o terminal de comandos
 
-Resta el segundo número al primero.
+Hardware
 
-✖️ 3. Multiplicación
+Cualquier equipo capaz de ejecutar Python
 
-Multiplica dos números.
+Bajo consumo de memoria y CPU
 
-➗ 4. División
+🧠 5. Arquitectura del Programa (Cómo está construido)
 
-Divide el primer número entre el segundo.
+El sistema se basa en tres pilares fundamentales:
 
-⚠️ Si el segundo número es 0, el programa mostrará:
+🔹 5.1 Funciones independientes
 
-Error: No se puede dividir entre 0
-√ 5. Raíz cuadrada
+Cada operación matemática está implementada en una función propia.
 
-Calcula la raíz cuadrada de un número.
+Por qué se hace así:
 
-⚠️ Si el número es negativo:
+Facilita mantenimiento
 
-Error: No se puede sacar raíz de número negativo
-🔼 6. Potencia
+Permite reutilización del código
 
-Eleva un número a la potencia indicada.
+Mejora la claridad y organización
 
-Ejemplo:
-2 elevado a 3 = 8
+Sigue buenas prácticas de programación modular
 
-📉 7. Porcentaje
+Ejemplo conceptual:
 
-Calcula el porcentaje de un número.
+“Una función = una tarea específica”
 
-Fórmula utilizada:
+🔹 5.2 Menú interactivo
 
-(a * b) / 100
+El programa presenta opciones numeradas para que el usuario seleccione la operación deseada.
 
-Ejemplo:
-20% de 150 = 30
+Por qué se usa un menú:
 
-🔁 8. Módulo
+Hace el sistema intuitivo
+
+Evita errores de comandos escritos manualmente
+
+Permite escalar el programa agregando nuevas funciones
+
+🔹 5.3 Bucle infinito (while True)
+
+Mantiene la calculadora funcionando continuamente.
+
+Por qué se utiliza:
+
+Sin este ciclo, el programa terminaría después de una sola operación.
+
+El ciclo solo se rompe cuando el usuario elige salir.
+
+🔧 6. Descripción Detallada de Funcionalidades
+➕ Suma
+
+Calcula la adición de dos valores.
+
+Por qué existe:
+Es la operación aritmética básica más utilizada.
+
+➖ Resta
+
+Obtiene la diferencia entre dos números.
+
+✖️ Multiplicación
+
+Calcula el producto entre dos valores.
+
+➗ División
+
+Divide un número entre otro.
+
+Validación implementada:
+
+No permite división entre cero.
+
+Por qué:
+Matemáticamente es indefinida y generaría error en el programa.
+
+√ Raíz cuadrada
+
+Calcula la raíz cuadrada de un número usando la librería matemática de Python.
+
+Restricción:
+No admite números negativos.
+
+Por qué:
+La raíz de un número negativo no pertenece a los números reales.
+
+🔼 Potencia
+
+Eleva un número a otro (base^exponente).
+
+Uso común:
+Cálculos exponenciales y científicos básicos.
+
+📉 Porcentaje
+
+Calcula qué porcentaje representa un valor respecto a otro.
+
+Fórmula aplicada:
+
+porcentaje = (valor × porcentaje) / 100
+
+🔁 Módulo
 
 Obtiene el residuo de una división.
 
-Ejemplo:
-10 % 3 = 1
+Por qué es útil:
+Se usa frecuentemente en programación para:
 
-📊 9. Promedio
+Determinar números pares o impares
 
-Calcula el promedio de varios números.
+Ciclos repetitivos
 
-Entrada:
-Los números deben escribirse separados por espacios.
+Distribuciones
 
-Ejemplo:
+📊 Promedio
 
-10 20 30 40
+Calcula la media aritmética de varios números.
 
-⚠️ Si no se ingresan números:
+El usuario introduce los valores separados por espacios.
 
-Error: Lista vacía
-🚪 0. Salir
+Por qué se usa una lista:
 
-Finaliza la ejecución del programa y muestra:
+Permite manejar múltiples datos de forma flexible.
 
-Gracias por usar la calculadora 😊
+🔄 7. Flujo Operativo del Sistema
+
+El programa inicia y muestra el título
+
+Se despliega el menú de opciones
+
+El usuario selecciona una operación
+
+Se solicitan los datos necesarios
+
+Se ejecuta el cálculo mediante la función correspondiente
+
+Se muestra el resultado
+
+El sistema vuelve al menú principal
+
+Finaliza solo si el usuario elige salir
+
+❗ 8. Manejo de Errores y Validaciones
+
+Se implementaron controles básicos para garantizar estabilidad:
+
+División entre cero
+
+Raíz de números negativos
+
+Lista vacía en promedio
+
+Opción inválida del menú
+
+Por qué es importante:
+
+Evita que el programa se detenga abruptamente y mejora la experiencia del usuario.
+
+💡 9. Justificación Técnica de Decisiones
+Decisión	Motivo
+Uso de funciones	Organización y reutilización
+Menú numérico	Interfaz simple y clara
+Bucle infinito	Uso continuo
+Validaciones	Prevención de fallos
+Entrada por teclado	Interacción directa
+Librería math	Precisión matemática
+🚀 10. Ventajas del Sistema
+
+✔ Fácil de usar
+✔ Ligero y rápido
+✔ Compatible con cualquier sistema
+✔ Código claro y mantenible
+✔ Ideal para aprendizaje de programación
+
+⚠️ 11. Limitaciones Actuales
+
+Solo admite números enteros
+
+No posee interfaz gráfica
+
+No guarda historial
+
+No permite operaciones encadenadas
+
+🔮 12. Posibles Mejoras Futuras
+
+Soporte para números decimales
+
+Interfaz gráfica (GUI)
+
+Historial de cálculos
+
+Modo científico
+
+Validación avanzada de entradas
+
+Exportación de resultados
+
+🏁 13. Conclusión
+
+La calculadora desarrollada cumple eficazmente con su propósito como herramienta matemática básica y como proyecto de aprendizaje en programación. Su diseño modular, controlado y validado permite un funcionamiento estable y comprensible, facilitando futuras ampliaciones.
+
+Además, el proyecto demuestra la correcta aplicación de conceptos fundamentales de Python como funciones, estructuras de control, manejo de datos y validación de entradas.
